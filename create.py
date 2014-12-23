@@ -13,7 +13,7 @@ pipe = sp.Popen(cmd, shell=True, stdout=sp.PIPE)
 out, err = pipe.communicate()
 out = out.split()
 dirs = filter(lambda s: s[0].isdigit(), out)
-cur = int(max([x.split('_')[0] for x in dirs]))
+cur = max([int(x.split('_')[0]) for x in dirs])
 next = str(cur+1)
 project = next + '_' + project
 
