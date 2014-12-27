@@ -2,3 +2,6 @@
 # -*- coding:utf-8 -*-
 
 
+
+s = Solution()
+print s.() # 
