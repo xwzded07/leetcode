@@ -12,7 +12,6 @@ class Solution:
         max_subsum = sum
         for idx in xrange(1, N):
             sum += A[idx]
-            print idx, min_sum, sum
             if sum - min_sum > max_subsum:
                 max_subsum = sum - min_sum
             if sum < min_sum:
