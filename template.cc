@@ -1,7 +1,8 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
-// using namespace std;
+#include <assert.h>
+using namespace std;
 
 int main(int argc, char **argv) {
     Solution s;

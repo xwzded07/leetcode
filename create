@@ -4,7 +4,12 @@
 import sys,os
 import subprocess as sp
 
-args = sys.argv[1:]
+lan = sys.argv[1]
+if lan not in ('-p', '-c'):
+    print 'unsupported language specified: ' + lan
+    sys.exit(-1)
+
+args = sys.argv[2:]
 args = map(lambda s: s.lower(), args)
 project = '_'.join(args)
 
@@ -20,5 +25,11 @@ project = next + '_' + project
 cmd = 'mkdir %s' % project
 os.system(cmd)
 
-cmd = 'cp template.py %s/s1.py' % (project)
-os.system(cmd)
+if lan == '-p':
+    cmd = 'cp template.py %s/s1.py' % (project)
+    os.system(cmd)
+elif lan == '-c':
+    cmd = 'cp template.cc %s/s1.cc' % (project)
+    os.system(cmd)
+
+print 'project %s created successfully' % project
