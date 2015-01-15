@@ -32,4 +32,4 @@ elif lan == '-c':
     cmd = 'cp template.cc %s/s1.cc' % (project)
     os.system(cmd)
 
-print 'project %s created successfully' % project
+print 'project %s created in %s successfully' % (project, 'c' if lan == '-c' else 'python')
